@@ -29,6 +29,6 @@ class Api::SurveysController < ApplicationController
   end
 
   def survey_params
-    params.require(:survey).permit(:name, :description, components: [:id, :type, :content, :x, :y])
+    params.require(:survey).permit(:name, :description, components: [:id, :type, :content, :x_coordinate, :y_coordinate])
   end
 end
