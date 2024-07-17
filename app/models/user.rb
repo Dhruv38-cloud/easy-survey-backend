@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :surveys, dependent: :destroy
+
   def generate_jwt
     JsonWebToken.encode(user_id: id)
   end
